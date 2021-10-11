@@ -1,6 +1,9 @@
 Kernel driver k10temp
 =====================
 
+NOTE: This fork contains the update from the latest 5.15-rc4 kernel
+bringing the driver up to date with https://git.kernel.org/pub/scm/linux/kernel/git/groeck/linux-staging.git/log/?h=hwmon
+
 Supported chips:
 * AMD Family 10h processors:
   Socket F: Quad-Core/Six-Core/Embedded Opteron (but see below)
@@ -14,6 +17,7 @@ Supported chips:
 * AMD Family 15h processors: "Bulldozer" (FX-Series), "Trinity", "Kaveri", "Carrizo"
 * AMD Family 16h processors: "Kabini", "Mullins"
 * AMD Family 17h processors: "Ryzen", "Threadripper"
+* AMD Family 19h processors
 
   Prefix: 'k10temp'
   Addresses scanned: PCI space
@@ -47,7 +51,7 @@ Description
 -----------
 
 This driver permits reading of the internal temperature sensor of AMD
-Family 10h/11h/12h/14h/15h/16h/17h processors.
+Family 10h/11h/12h/14h/15h/16h/17h/19h processors.
 
 All these processors have a sensor, but on those for Socket F or AM2+,
 the sensor may return inconsistent values (erratum 319).  The driver
